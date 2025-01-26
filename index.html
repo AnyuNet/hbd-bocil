@@ -1,64 +1,69 @@
-<!DOCTYPE html>
-<html lang="id">
-
+<!doctype html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Selamat Ulang Tahun</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bookshelf Apps</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <div class="flipbook">
-        <div class="page" id="page1">
-            <div class="content">
-                <img src="img/IMG_20241121_142020.jpg" alt="bocil" class="cover-image">
-                <h1>Selamat Ulang Tahun Ayyy!</h1>
-                <h4>Selamat Ulang tahun yang ke 18!</h4>
+<header class="head_bar">
+    <h1 class="head_bar__title">Bookshelf Apps</h1>
+</header>
+<main>
+    <section class="input_section">
+        <h2>Masukkan Buku Baru</h2>
+        <form id="inputBook">
+            <div class="input">
+                <label for="inputBookTitle">Judul</label>
+                <input id="inputBookTitle" type="text" required>
             </div>
-        </div>
-        <div class="page" id="page2">
-            <div class="content">
-                <h1>Semoga Bahagia</h1>
-                <p>Hari ini adalah hari yang sangat spesial karena dunia diberikan hadiah terindah berupa dirimu. Aku
-                    ingin mengucapkan betapa bersyukurnya aku memiliki kamu di hidupku. Kamu bukan hanya pasangan, tapi
-                    juga sahabat, penyemangat, dan tempat aku merasa paling nyaman..</p>
+            <div class="input">
+                <label for="inputBookAuthor">Penulis</label>
+                <input id="inputBookAuthor" type="text" required>
             </div>
-        </div>
-        <div class="page" id="page3">
-            <div class="content">
-                <h1>Terima Kasih ya sayang</h1>
-                <p>Terima kasih sudah menjadi bagian dari hidupku. Aku tidak bisa membayangkan dunia tanpa dirimu. Kamu
-                    adalah bintang yang selalu bersinar dalam hidupku, bahkan di saat-saat tergelap sekalipun.Di setiap
-                    senyummu.</p>
+            <div class="input">
+                <label for="inputBookYear">Tahun</label>
+                <input id="inputBookYear" type="number" required>
             </div>
-        </div>
-        <div class="page" id="page4">
-            <div class="content">
-                <h1>Semoga Terwujud</h1>
-                <p> Di hari ulang tahunmu ini, aku berdoa semoga semua mimpi dan harapanmu dapat terwujud. Aku berharap
-                    kamu selalu dikelilingi oleh cinta, kebahagiaan, dan keberkahan. Apa pun yang kamu inginkan, aku
-                    akan selalu ada di sini untuk mendukungmu, menghiburmu, dan mencintaimu tanpa syarat.
-                </p>
+            <div class="input_inline">
+                <label for="inputBookIsComplete">Selesai dibaca</label>
+                <input id="inputBookIsComplete" type="checkbox">
             </div>
-        </div>
-        <div class="page" id="page5">
-            <div class="content">
-                <h1>I love You</h1>
-                    <p>
-                        Aku mencintaimu lebih dari kata-kata yang bisa aku ungkapkan. Jadi hari ini, mari kita rayakan
-                        kebahagiaanmu. Aku ingin memastikan kamu tahu betapa berharganya dirimu dan betapa aku sangat
-                        bangga
-                        memilikimu sebagai bagian dari hidupku.
+            <button id="bookSubmit" type="submit">Masukkan Buku ke rak <span>Belum selesai dibaca</span></button>
+        </form>
+    </section>
 
-                        Selamat ulang tahun, sayangku. Aku mencintaimu sekarang, esok, dan selamanya.
-                    </p>
-            </div>
+    <section class="search_section">
+        <h2>Cari Buku (Opsional)</h2>
+        <form id="searchBook">
+            <label for="searchBookTitle">Judul</label>
+            <input id="searchBookTitle" type="text">
+            <button id="searchSubmit" type="submit">Cari</button>
+        </form>
+    </section>
+
+    <section class="book_shelf">
+        <h2>Belum selesai dibaca</h2>
+        <h6>*Edit dengan menekan judul buku</h6>
+
+        <div id="incompleteBookshelfList" class="book_list"> 
         </div>
-    </div>
-    <button id="prev">⟵ Sebelumnya</button>
-    <button id="next">Berikutnya ⟶</button>
-    <script src="script.js"></script>
+    </section>
+
+    <section class="book_shelf">
+        <h2>Selesai dibaca</h2>
+        <h6>*Edit dengan menekan judul buku</h6>
+
+        <div id="completeBookshelfList" class="book_list"> 
+        </div>
+    </section>
+</main>
+
+<script src="script.js"></script>
 </body>
-
 </html>
